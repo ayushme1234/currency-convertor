@@ -1,0 +1,171 @@
+const countryList = {
+  AED: "AE",
+  AFN: "AF",
+  XCD: "AG",
+  ALL: "AL",
+  AMD: "AM",
+  ANG: "AN",
+  AOA: "AO",
+  // AQD: "AQ", // This code is unusual, flagsapi likely won't have it.
+  ARS: "AR",
+  AUD: "AU",
+  AZN: "AZ",
+  BAM: "BA",
+  BBD: "BB",
+  BDT: "BD",
+  XOF: "BJ", // XOF is West African CFA franc, commonly associated with Benin flag or others. BE is Belgium (EUR). Changed to BJ.
+  BGN: "BG",
+  BHD: "BH",
+  BIF: "BI",
+  BMD: "BM",
+  BND: "BN",
+  BOB: "BO",
+  BRL: "BR",
+  BSD: "BS",
+  // NOK: "BV", // BV is Bouvet Island, NOK is Norway. Use NO.
+  BWP: "BW",
+  BYR: "BY", // Old Belarusian Ruble, BYN is current. flagsapi might use BY.
+  BZD: "BZ",
+  CAD: "CA",
+  CDF: "CD",
+  XAF: "CM", // XAF is Central African CFA franc, commonly associated with Cameroon flag or others. CF is Central African Republic. Changed to CM.
+  CHF: "CH",
+  CLP: "CL",
+  CNY: "CN",
+  COP: "CO",
+  CRC: "CR",
+  CUP: "CU",
+  CVE: "CV",
+  // CYP: "CY", // Cypriot Pound, deprecated. Cyprus now uses EUR.
+  CZK: "CZ",
+  DJF: "DJ",
+  DKK: "DK",
+  DOP: "DO",
+  DZD: "DZ",
+  // ECS: "EC", // Ecuadorian Sucre, deprecated. Ecuador uses USD.
+  // EEK: "EE", // Estonian Kroon, deprecated. Estonia uses EUR.
+  EGP: "EG",
+  ETB: "ET",
+  EUR: "DE", // EUR is Euro, using Germany flag as an example. You could also use FR, IT, ES, etc. or a generic EU flag if available (flagsapi uses EU). Let's use EU if available.
+  FJD: "FJ",
+  FKP: "FK",
+  GBP: "GB",
+  GEL: "GE",
+  GGP: "GG",
+  GHS: "GH",
+  GIP: "GI",
+  GMD: "GM",
+  GNF: "GN",
+  GTQ: "GT",
+  GYD: "GY",
+  HKD: "HK",
+  HNL: "HN",
+  HRK: "HR", // Croatian Kuna, deprecated. Croatia now uses EUR.
+  HTG: "HT",
+  HUF: "HU",
+  IDR: "ID",
+  ILS: "IL",
+  INR: "IN",
+  IQD: "IQ",
+  IRR: "IR",
+  ISK: "IS",
+  JMD: "JM",
+  JOD: "JO",
+  JPY: "JP",
+  KES: "KE",
+  KGS: "KG",
+  KHR: "KH",
+  KMF: "KM",
+  KPW: "KP",
+  KRW: "KR",
+  KWD: "KW",
+  KYD: "KY",
+  KZT: "KZ",
+  LAK: "LA",
+  LBP: "LB",
+  LKR: "LK",
+  LRD: "LR",
+  LSL: "LS",
+  // LTL: "LT", // Lithuanian Litas, deprecated. Lithuania uses EUR.
+  // LVL: "LV", // Latvian Lats, deprecated. Latvia uses EUR.
+  LYD: "LY",
+  MAD: "MA",
+  MDL: "MD",
+  MGA: "MG",
+  MKD: "MK",
+  MMK: "MM",
+  MNT: "MN",
+  MOP: "MO",
+  // MRO: "MR", // Old Mauritanian Ouguiya, MRU is current. flagsapi might use MR.
+  // MTL: "MT", // Maltese Lira, deprecated. Malta uses EUR.
+  MUR: "MU",
+  MVR: "MV",
+  MWK: "MW",
+  MXN: "MX",
+  MYR: "MY",
+  MZN: "MZ",
+  NAD: "NA",
+  XPF: "PF", // XPF is CFP Franc, commonly associated with French Polynesia flag or others. NC is New Caledonia. Changed to PF.
+  NGN: "NG",
+  NIO: "NI",
+  NPR: "NP",
+  NZD: "NZ",
+  OMR: "OM",
+  PAB: "PA",
+  PEN: "PE",
+  PGK: "PG",
+  PHP: "PH",
+  PKR: "PK",
+  PLN: "PL",
+  PYG: "PY",
+  QAR: "QA",
+  RON: "RO",
+  RSD: "RS",
+  RUB: "RU",
+  RWF: "RW",
+  SAR: "SA",
+  SBD: "SB",
+  SCR: "SC",
+  SDG: "SD",
+  SEK: "SE",
+  SGD: "SG",
+  // SKK: "SK", // Slovak Koruna, deprecated. Slovakia uses EUR.
+  SLL: "SL",
+  SOS: "SO",
+  SRD: "SR",
+  // STD: "ST", // Old Sao Tome and Principe Dobra, STN is current. flagsapi might use ST.
+  // SVC: "SV", // Salvadoran Colón, deprecated. El Salvador uses USD.
+  SYP: "SY",
+  SZL: "SZ",
+  THB: "TH",
+  TJS: "TJ",
+  TMT: "TM",
+  TND: "TN",
+  TOP: "TO",
+  TRY: "TR",
+  TTD: "TT",
+  TWD: "TW",
+  TZS: "TZ",
+  UAH: "UA",
+  UGX: "UG",
+  USD: "US",
+  UYU: "UY",
+  UZS: "UZ",
+  // VEF: "VE", // Old Venezuelan Bolívar Fuerte, VES is current. flagsapi might use VE.
+  VND: "VN",
+  VUV: "VU",
+  YER: "YE",
+  ZAR: "ZA",
+  // ZMK: "ZM", // Old Zambian Kwacha, ZMW is current. flagsapi might use ZM.
+  // ZWD: "ZW", // Old Zimbabwean Dollar, ZWL is current. flagsapi might use ZW.
+
+  // Add updated codes as per flagsapi and common usage:
+  EUR: "EU", // Using generic EU flag for Euro
+  NOK: "NO", // Corrected to Norway
+  BYN: "BY", // Current Belarusian Ruble
+  MRU: "MR", // Current Mauritanian Ouguiya
+  STN: "ST", // Current São Tomé and Príncipe Dobra
+  VES: "VE", // Current Venezuelan Bolívar Soberano
+  ZMW: "ZM", // Current Zambian Kwacha
+  ZWL: "ZW", // Current Zimbabwean Dollar
+};

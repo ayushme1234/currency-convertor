@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Add this for consistent box model */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4e4ba; /* Your original background color */
+  font-family: Arial, sans-serif; /* Add a fallback font */
+}
+
+.container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  min-height: 45vh;
+  width: 40vh; /* This might make it too narrow on larger screens, consider max-width */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem; /* Space below heading */
+  color: #333;
+}
+
+form {
+  margin: 2rem 0 1rem 0;
+}
+
+form select,
+button,
+input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 0.75rem;
+}
+
+form input {
+  border: 1px solid lightgray;
+  font-size: 1rem;
+  height: 3rem;
+  padding-left: 0.8rem; /* Slightly more padding */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06); /* Inner shadow for depth */
+}
+
+.amount p {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.dropdown i {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  cursor: pointer; /* Indicate it's clickable */
+  color: #888;
+  transition: transform 0.2s ease-in-out; /* Smooth transition for swap icon */
+}
+
+.dropdown i:hover {
+  transform: rotate(180deg);
+}
+
+.select-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem; /* Space between flag and select */
+  width: 100%; /* Make select container take full width of its parent (.from, .to) */
+  border-radius: 0.5rem;
+  border: 1px solid lightgray;
+  padding: 0.5rem; /* Padding around flag and select */
+  background-color: #f9f9f9;
+}
+
+.select-container img {
+  max-width: 2rem; /* Consistent flag size */
+  height: 2rem;
+  object-fit: contain; /* Ensure flag scales without distortion */
+  border-radius: 50%; /* Make flags circular */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.select-container select {
+  font-size: 1rem;
+  padding: 0.2rem 0.5rem;
+  background-color: transparent; /* Make background transparent to show parent's bg */
+  cursor: pointer;
+  flex-grow: 1; /* Allow select to take available space */
+}
+
+.msg {
+  margin: 2rem 0 2rem 0;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #3f7d20; /* A pleasant green for success message */
+  font-weight: bold;
+}
+
+form button {
+  height: 3rem;
+  background-color: #af4d98; /* Your original button color */
+  color: #fff;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+form button:hover {
+  background-color: #9b3d88; /* Slightly darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .container {
+    width: 90%; /* Adjust width for smaller screens */
+    min-height: auto;
+    padding: 1.5rem;
+  }
+  .dropdown {
+    flex-direction: column; /* Stack dropdowns vertically */
+    gap: 1.5rem;
+  }
+  .dropdown i {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .select-container {
+    width: 100%; /* Make select containers full width when stacked */
+  }
+}
